@@ -1,0 +1,31 @@
+# Spring Properties
+spring:
+  application:
+    name: web-service
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+
+# HTTP Server
+server:
+  port: 3333
+
+accounts-service:
+  ribbon:
+    eureka:
+      enabled: true
+    listOfServers: localhost:2222,localhost:2221
+    ServerListRefreshInterval: 15000
+#    DeploymentContextBasedVipAddresses: accounts-service
+#    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+
+#gateway-service:
+#  ribbon:
+#    eureka:
+#      enabled: true
+#    listOfServers: localhost:1110
+#    ServerListRefreshInterval: 15000
