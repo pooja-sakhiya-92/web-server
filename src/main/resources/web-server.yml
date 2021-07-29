@@ -18,10 +18,18 @@ accounts-service:
   ribbon:
     eureka:
       enabled: true
-    listOfServers: localhost:2222,localhost:2221
+    listOfServers: localhost:2222
     ServerListRefreshInterval: 15000
-#    DeploymentContextBasedVipAddresses: accounts-service
-#    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    #DeploymentContextBasedVipAddresses: accounts-service
+    #NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: DEBUG
 
 #gateway-service:
 #  ribbon:
